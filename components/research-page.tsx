@@ -35,7 +35,11 @@ function ResultsChart() {
           return <g key={group.label}>
             {group.values.map((value, valueIndex) => {
               const height = value * scale
-              return <rect key={valueIndex} x={groupX + valueIndex * 38} y={baseline - height} width="25" height={height} fill={colors[valueIndex]} rx="1" />
+              const x = groupX + valueIndex * 46
+              return <g key={valueIndex}>
+                <text x={x + 17} y={baseline - height - 8} textAnchor="middle" className="chart-value">{value.toFixed(2)}</text>
+                <rect x={x} y={baseline - height} width="34" height={height} fill={colors[valueIndex]} rx="1" />
+              </g>
             })}
             <text x={groupX + 38} y="278" textAnchor="middle" className="chart-label">{group.label}</text>
           </g>
@@ -65,13 +69,14 @@ export function ResearchPage() {
 
       <section className="section" aria-labelledby="results-heading">
         <SectionHeading number="01" ><span id="results-heading">Results</span></SectionHeading>
+        <p className="results-lede">Standard FedAvg left RSNA and Pediatric worse off than training alone. Weighted, scheduled training reversed that.</p>
         <div className="results-layout">
           <ResultsChart />
           <div className="table-wrap">
             <table>
               <caption className="sr-only">Test accuracy by dataset and training method</caption>
               <thead><tr><th scope="col">Dataset</th><th scope="col">Local</th><th scope="col">FedAvg</th><th scope="col">Weighted + scheduled</th></tr></thead>
-              <tbody>{results.map((row) => <tr key={row.dataset}><th scope="row">{row.dataset}</th><td className={row.dataset === 'RSNA' || row.dataset === 'Pediatric' ? 'best' : ''}>{row.local}</td><td className={row.dataset === 'NIH ChestX-ray14' ? 'best' : ''}>{row.fedAvg}</td><td className={row.dataset !== 'NIH ChestX-ray14' ? 'best' : ''}>{row.weighted}</td></tr>)}</tbody>
+              <tbody>{results.map((row) => <tr key={row.dataset}><th scope="row">{row.dataset}</th><td>{row.local}</td><td className={row.dataset === 'NIH ChestX-ray14' ? 'best' : ''}>{row.fedAvg}</td><td className={row.dataset !== 'NIH ChestX-ray14' ? 'best' : ''}>{row.weighted}</td></tr>)}</tbody>
             </table>
           </div>
         </div>
