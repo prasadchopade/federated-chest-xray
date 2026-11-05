@@ -64,6 +64,7 @@ export function ResearchPage() {
         <nav className="links" aria-label="Project links">
           <a href="https://github.com/prasadchopade/federated-learning-major-project">Code <span aria-hidden="true">↗</span></a>
           <a href="https://prasadchopade.vercel.app/">Portfolio <span aria-hidden="true">↗</span></a>
+          <a href="https://gamma.app/docs/Plain-FedAvg-left-two-of-three-hospitals-worse-off-than-training--4axj8zh6gsi0huo">Deck <span aria-hidden="true">↗</span></a>
         </nav>
       </header>
 
