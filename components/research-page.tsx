@@ -122,7 +122,7 @@ export function ResearchPage() {
         <ul><li>Secure aggregation and differential privacy were not implemented.</li><li>Mapping NIH&apos;s multiple findings into three classes loses detail.</li><li>Accuracy alone is not enough, so per-class precision, recall and F1 are still needed.</li><li>This is a research prototype, not a clinical tool.</li></ul>
       </section>
 
-      <footer><span>Prasad Chopade</span><nav aria-label="Footer links"><a href="https://github.com/prasadchopade/federated-learning-major-project">Code</a><a href="https://prasadchopade.vercel.app/">Portfolio</a></nav></footer>
+      <footer><span>Prasad Chopade</span><nav aria-label="Footer links"><a href="https://github.com/prasadchopade/federated-learning-major-project">Code</a><a href="https://prasadchopade.vercel.app/">Portfolio</a><a href="https://gamma.app/docs/Plain-FedAvg-left-two-of-three-hospitals-worse-off-than-training--4axj8zh6gsi0huo">Deck</a></nav></footer>
     </main>
   )
 }
